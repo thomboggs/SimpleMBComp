@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" cppLanguageStandard="17">
   <MAINGROUP id="URna0K" name="SimpleMBComp">
     <GROUP id="{AA0BD9BD-F23E-06B6-AE16-17C0CE296C48}" name="Source">
+      <FILE id="EurCPe" name="CompressorBand.h" compile="0" resource="0"
+            file="Source/CompressorBand.h"/>
       <FILE id="CZvNos" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="UBmVgH" name="PluginProcessor.h" compile="0" resource="0"

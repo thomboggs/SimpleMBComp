@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "CompressorBand.h"
 
 //==============================================================================
 /**
@@ -58,14 +59,14 @@ public:
     APVTS apvts {*this, nullptr, "Parameters", createParameterLayout()};
     
 private:
-    
-    juce::dsp::Compressor<float> compressor;
-    
-    juce::AudioParameterFloat* attack { nullptr };
-    juce::AudioParameterFloat* release { nullptr };
-    juce::AudioParameterFloat* threshold { nullptr };
-    juce::AudioParameterChoice* ratio { nullptr };
-    juce::AudioParameterBool* bypassed { nullptr };
+    CompressorBand compressor;
+//    juce::dsp::Compressor<float> compressor;
+//    
+//    juce::AudioParameterFloat* attack { nullptr };
+//    juce::AudioParameterFloat* release { nullptr };
+//    juce::AudioParameterFloat* threshold { nullptr };
+//    juce::AudioParameterChoice* ratio { nullptr };
+//    juce::AudioParameterBool* bypassed { nullptr };
     
     
     
