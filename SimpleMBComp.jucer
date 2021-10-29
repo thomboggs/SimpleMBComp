@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="YC4DPe" name="SimpleMBComp" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" cppLanguageStandard="17">
   <MAINGROUP id="URna0K" name="SimpleMBComp">
     <GROUP id="{AA0BD9BD-F23E-06B6-AE16-17C0CE296C48}" name="Source">
       <FILE id="CZvNos" name="PluginProcessor.cpp" compile="1" resource="0"
