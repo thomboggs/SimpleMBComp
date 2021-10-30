@@ -25,20 +25,31 @@ SimpleMBCompAudioProcessor::SimpleMBCompAudioProcessor()
     using namespace Params;
     const auto& params = GetParams();
     
-    compressor.attack = dynamic_cast<juce::AudioParameterFloat*>(apvts.getParameter(params.at(Names::Attack_Low_Band)));
-    jassert(compressor.attack != nullptr);
+    auto floatHelper = [&apvts = this->apvts, &params](auto& param, const auto& paramName)
+    {
+        param = dynamic_cast<juce::AudioParameterFloat*>(apvts.getParameter(params.at(paramName)));
+        jassert(param != nullptr);
+    };
     
-    compressor.release = dynamic_cast<juce::AudioParameterFloat*>(apvts.getParameter(params.at(Names::Release_Low_Band)));
-    jassert(compressor.release != nullptr);
+    floatHelper(compressor.attack, Names::Attack_Low_Band);
+    floatHelper(compressor.release, Names::Release_Low_Band);
+    floatHelper(compressor.threshold, Names::Threshold_Low_Band);
     
-    compressor.threshold = dynamic_cast<juce::AudioParameterFloat*>(apvts.getParameter(params.at(Names::Threshold_Low_Band)));
-    jassert(compressor.threshold != nullptr);
+    auto choiceHelper = [&apvts = this->apvts, &params](auto& param, const auto& paramName)
+    {
+        param = dynamic_cast<juce::AudioParameterChoice*>(apvts.getParameter(params.at(paramName)));
+        jassert(param != nullptr);
+    };
     
-    compressor.ratio = dynamic_cast<juce::AudioParameterChoice*>(apvts.getParameter(params.at(Names::Ratio_Low_Band)));
-    jassert(compressor.ratio != nullptr);
+    choiceHelper(compressor.ratio, Names::Ratio_Low_Band);
     
-    compressor.bypassed = dynamic_cast<juce::AudioParameterBool*>(apvts.getParameter(params.at(Names::Bypassed_Low_Band)));
-    jassert(compressor.bypassed != nullptr);
+    auto boolHelper = [&apvts = this->apvts, &params](auto& param, const auto& paramName)
+    {
+        param = dynamic_cast<juce::AudioParameterBool*>(apvts.getParameter(params.at(paramName)));
+        jassert(param != nullptr);
+    };
+    
+    boolHelper(compressor.bypassed, Names::Bypassed_Low_Band);
     
 }
 
