@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "CompressorBand.h"
+#include "ParamInfo.h"
 
 //==============================================================================
 /**
