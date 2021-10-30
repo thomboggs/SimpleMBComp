@@ -63,9 +63,11 @@ private:
     CompressorBand compressor;
 
     using Filter = juce::dsp::LinkwitzRileyFilter<float>;
-    Filter LP, HP;
+    Filter LP, HP, AP;
     
     juce::AudioParameterFloat* lowCrossover { nullptr };
+    
+    juce::AudioBuffer<float> apBuffer;
     
     std::array<juce::AudioBuffer<float>, 2> filterBuffers;
     
