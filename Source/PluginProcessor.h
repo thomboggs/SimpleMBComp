@@ -77,6 +77,17 @@ private:
     
     std::array<juce::AudioBuffer<float>, 3> filterBuffers;
     
+    juce::dsp::Gain<float> inputGain, outputGain;
+    juce::AudioParameterFloat* inputGainParam { nullptr };
+    juce::AudioParameterFloat* outputGainParam { nullptr };
+    
+    template <typename T, typename U>
+    void applyGain (T& buffer, U& gain)
+    {
+        auto GainBlock = juce::dsp::AudioBlock<float>(buffer);
+        auto GainContext = juce::dsp::ProcessContextReplacing<float>(GainBlock);
+        gain.process(GainContext);
+    }
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleMBCompAudioProcessor)
