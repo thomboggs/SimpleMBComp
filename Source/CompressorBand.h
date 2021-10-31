@@ -19,6 +19,8 @@ struct CompressorBand
     juce::AudioParameterFloat* threshold { nullptr };
     juce::AudioParameterChoice* ratio { nullptr };
     juce::AudioParameterBool* bypassed { nullptr };
+    juce::AudioParameterBool* mute { nullptr };
+    juce::AudioParameterBool* solo { nullptr };
     
     void prepare (const juce::dsp::ProcessSpec spec)
     {
